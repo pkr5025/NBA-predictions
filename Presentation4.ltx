@@ -1,0 +1,192 @@
+% $Header: /home/vedranm/bitbucket/beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 90e850259b8b 2007/01/28 20:48:30 tantau $
+
+\documentclass{beamer}
+
+% This file is a solution  for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+%  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+  \setbeamertemplate{frametitle}[default][center]
+ \setbeamertemplate{footline}[frame number]
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\setlength\parindent{24pt}
+
+\title[We are opening a Sportsbook!] % (optional, use only with long paper titles)
+{We are opening a Sportsbook!}
+
+
+\subtitle
+{A Philip Klein-Rodick Presentation}
+
+\author[Philip~Klein-Rodick ] % (optional, use only with lots of authors)
+{Philip~Klein-Rodick\inst{1} }
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+{
+  \inst{1}%
+pkleinrodick@gmail.com
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[CFP 2003] % (optional, should be abbreviation of conference name)
+{D\&PKR Enterprises Investors' Pitch}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}s
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Sports books are legal now}
+\begin{itemize}
+	\item We are opening a sports book \pause
+	\item Betting on sports: How it works \pause
+	\begin{itemize}
+		\item Example: Bulls -200 
+		\begin{itemize}
+			\item Bet 2 dollars to win 1 dollar. \pause
+		\end{itemize}
+		\item Example: Bulls +4
+		\begin{itemize}
+			\item Bet 1 dollars to win 1 dollar. \pause
+		\end{itemize}
+	\end{itemize}
+	\item Goal: Equal Money Bet on both Sides \pause
+	\item How: Modeling \pause
+	\item Statistics on just under 10,000 NBA games taken from 2014-2018 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Initial Model and Features}
+	\begin{itemize}
+	\item The Features
+	\begin{figure}
+		\centering
+		\makebox[0pt]{%
+	        \includegraphics[width=1.05\textwidth, keepaspectratio]{Dfhead.png}}
+	\end{figure} \pause
+	\item Total of 39 statistics incorporated \pause
+	\item Initial model: A Decision Tree \pause
+		\begin{itemize}
+			\item Basic idea: Make decisions \pause
+			\item Splitting Criterion
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The Initial Model}
+	\begin{figure}
+		\centering
+		\makebox[0pt]{%
+	        \includegraphics[width=.75\textwidth, height=\textheight, keepaspectratio]{Tree_Example.png}}
+	\end{figure} 
+\end{frame}
+
+%\begin{frame}{Evaluating and Improving}
+%	\begin{itemize}
+%		\item ROC AUC Score, what is it? \pause
+%		\begin{itemize}
+%			\item ROC curve is the ratio of the true positive and false positive rates \pause
+%			\item The Model's Score: .81
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{The New Model!}
+%	\begin{itemize}
+%		\item Other Models Considered \pause
+%		\item Random Forest was the Best\pause
+%		\item Tuning Parameters \pause
+%		\item New ROC AUC score \pause
+%		\begin{itemize}
+%			\item .95\!
+%		\end{itemize}
+%		\item Sanity Check: Feature Importance \pause
+%		\begin{itemize}
+%			\item Field Goal Percentage and Opponent Field Goal Percentage Most Important \pause
+%			\item Team and Opponent Assists\pause
+%			\item Team Three pointers
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
+
+
+\begin{frame}{Evaluating and Improving}
+	\begin{itemize}
+		\item ROC AUC Score
+		\begin{itemize}
+			\item ROC curve is the ratio of the true positive and false positive rates \pause
+			\item Base Model's Score: .81\pause
+		\end{itemize}
+		\item Considered Other Models and Random Forest was the Best\pause
+		\item Tuning Parameters \pause
+		\item New ROC AUC score \pause
+		\begin{itemize}
+			\item .95\!
+		\end{itemize}
+		\item Sanity Check: Feature Importance \pause
+		\begin{itemize}
+			\item Field Goal Percentage and Opponent Field Goal Percentage Most Important \pause
+			\item Team and Opponent Assists\pause
+			\item Team Three pointers
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Next Steps}
+	\begin{itemize}
+	\item Look at season average statistics to predict individual games \pause
+	\item Develop betting lines based on win percentage
+	\item Individualized Statistics over Team Statistics\pause
+	\item Season by Season breakdown
+	\end{itemize}
+\end{frame}
+
+
+\end{document}
+
+
